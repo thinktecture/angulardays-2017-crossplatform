@@ -16,12 +16,9 @@ import {StarWarsDetailComponent} from './components/detail/starWarsDetail';
 import {PokemonListComponent} from './components/list/pokemonList';
 import {PokemonDetailComponent} from './components/detail/pokemonDetail';
 import {PokemonService} from './services/pokemon';
-import {PlatformService} from './services/platform';
-import {NgProgressModule, NgProgressInterceptor} from 'ngx-progressbar';
-import {NgxElectronModule} from 'ngx-electron';
-import {DesktopIntegrationService} from './services/desktopIntegration';
 import {MirrorComponent} from './components/mirror/mirror';
-import {CameraService, cameraServiceFactory} from './services/camera';
+import {NgProgressInterceptor, NgProgressModule} from "ngx-progressbar";
+import {DesktopCameraService} from "./services/desktopCamera";
 
 @NgModule({
   declarations: [
@@ -39,21 +36,16 @@ import {CameraService, cameraServiceFactory} from './services/camera';
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot(ROUTES, { useHash: true }),
     NgProgressModule,
-    NgxElectronModule
+    RouterModule.forRoot(ROUTES, { useHash: true })
   ],
   bootstrap: [RootComponent],
   providers: [
     WindowRef,
     StarWarsService,
     PokemonService,
-    PlatformService,
-    DesktopIntegrationService,
-    { provide: HTTP_INTERCEPTORS, useClass: NgProgressInterceptor, multi: true },
-    {
-      provide: CameraService, useFactory: cameraServiceFactory, deps: [PlatformService]
-    }
+    DesktopCameraService,
+    { provide: HTTP_INTERCEPTORS, useClass: NgProgressInterceptor, multi: true }
   ]
 })
 export class AppModule {

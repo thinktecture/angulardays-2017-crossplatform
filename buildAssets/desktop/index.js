@@ -1,5 +1,4 @@
 const { app, BrowserWindow, globalShortcut, Menu, Tray } = require('electron');
-const appMenu = require('./appMenu');
 
 const path = require('path');
 const url = require('url');
@@ -21,20 +20,6 @@ function createWindow() {
     slashes: true
   }));
 
-  buildTrayIcon();
-  appMenu.buildMenu();
-
-  globalShortcut.register('CmdOrCtrl+Shift+i', () => {
-    win.webContents.toggleDevTools();
-  });
-
-  globalShortcut.register('CmdOrCtrl+Shift+b', function () {
-    if (process.platform == 'darwin') {
-      app.dock.bounce('critical');
-    }
-    app.dock.setBadge('EVIL:)');
-  });
-
   win.on('closed', () => {
     win = null;
   });
@@ -54,25 +39,3 @@ app.on('activate', () => {
     createWindow();
   }
 });
-
-let buildTrayIcon = () => {
-  let trayIconPath = path.join(__dirname, 'icon.png');
-  var contextMenu = Menu.buildFromTemplate([
-    {
-      label: 'Pokemons...',
-      type: 'normal',
-      click: function () {
-        win.webContents.send('navigateTo', 'pokemon/list/pokemon/1');
-      }
-    },
-    {
-      label: 'Quit',
-      accelerator: 'Command+Q',
-      selector: 'terminate:'
-    }
-  ]);
-
-  trayApp = new Tray(trayIconPath);
-  trayApp.setToolTip('ng Demo');
-  trayApp.setContextMenu(contextMenu);
-};
