@@ -5,3 +5,5 @@ CefSharp/LegacyWpfClient/packages
 dist
 CefSharp/LegacyWpfClient/.vs
 npm-debug.log
+.idea
+mobilelive
