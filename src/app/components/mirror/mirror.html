@@ -1,9 +1,12 @@
 <h1>Mirror</h1>
 
-<button (click)="takePhoto()">
-  <i class="fa fa-camera fa-2x"></i>
-</button>
+<div class="mirror">
+  <div *ngIf="photo" class="mirror-image">
+    <img [src]="photo">
+  </div>
 
-<div *ngIf="photo">
-  <img [src]="photo" class="flex-image">
+  <button (click)="takePhoto()" class="trigger">
+    <i class="fa fa-camera fa-2x"></i>
+  </button>
+
 </div>
