@@ -25,3 +25,11 @@ body {
   user-select: none;
   line-height: 1.5;
 }
+
+router-outlet ~ * {
+  width: calc(100% - #{2 * $gap});
+
+  display: block;
+  margin: $gap;
+  position: fixed;
+}
