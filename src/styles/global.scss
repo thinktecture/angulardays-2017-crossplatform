@@ -31,5 +31,8 @@ router-outlet ~ * {
 
   display: block;
   margin: $gap;
+  overflow-y: scroll;
+  bottom: $menu-height;
+  top: $header-height;
   position: fixed;
 }
