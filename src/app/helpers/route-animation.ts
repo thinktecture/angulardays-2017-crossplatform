@@ -9,8 +9,8 @@ export const routeTransition = trigger('routeTransition', [
         animate('.5s ease-in-out', style({transform: 'translate3d(0, 0, 0)', opacity: 1}))
       ], {optional: true}),
       query(':leave', [
-        style({transform: 'translate3d(0, 0, 0)'}),
-        animate('.5s ease-in-out', style({transform: 'translate3d(100%, 0, 0)'}))
+        style({transform: 'translate3d(0, 0, 0)', opacity: 1}),
+        animate('.5s ease-in-out', style({transform: 'translate3d(100%, 0, 0)', opacity: 0}))
       ], {optional: true})
     ])
   ]),
@@ -22,8 +22,8 @@ export const routeTransition = trigger('routeTransition', [
         animate('.5s ease-in-out', style({transform: 'translate3d(0, 0, 0)', opacity: 1}))
       ], {optional: true}),
       query(':leave', [
-        style({transform: 'translate3d(0, 0, 0)'}),
-        animate('.5s ease-in-out', style({transform: 'translate3d(-100%, 0, 0)'}))
+        style({transform: 'translate3d(0, 0, 0)', opacity: 1}),
+        animate('.5s ease-in-out', style({transform: 'translate3d(-100%, 0, 0)', opacity: 0}))
       ], {optional: true})
     ])
   ]),
