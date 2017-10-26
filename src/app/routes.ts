@@ -14,22 +14,26 @@ export const ROUTES: Routes = [
   },
   {
     path: 'home',
-    component: HomeComponent
+    component: HomeComponent,
+    data: { state: 'home' }
   },
   {
     path: 'mirror',
-    component: MirrorComponent
+    component: MirrorComponent,
+    data: { state: 'mirror' }
   },
   {
     path: 'starwars',
     children: [
       {
         path: 'list/:model/:page',
-        component: StarWarsListComponent
+        component: StarWarsListComponent,
+        data: { state: 'starwars' }
       },
       {
         path: 'detail/:model/:id',
-        component: StarWarsDetailComponent
+        component: StarWarsDetailComponent,
+        data: { state: 'starwars' }
       }
     ]
   },
@@ -38,11 +42,13 @@ export const ROUTES: Routes = [
     children: [
       {
         path: 'list/pokemon/:page',
-        component: PokemonListComponent
+        component: PokemonListComponent,
+        data: { state: 'pokemon' }
       },
       {
         path: 'detail/pokemon/:id',
-        component: PokemonDetailComponent
+        component: PokemonDetailComponent,
+        data: { state: 'pokemon' }
       }
     ]
   }
