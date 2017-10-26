@@ -53,9 +53,10 @@
     "core-js": "2.5.1",
     "font-awesome": "4.7.0",
     "include-media": "1.4.9",
-    "ngx-progressbar": "^2.0.8",
     "ngx-electron": "1.0.3",
+    "ngx-progressbar": "^2.0.8",
     "rxjs": "5.4.3",
+    "web-animations-js": "^2.3.1",
     "zone.js": "0.8.18"
   },
   "devDependencies": {
