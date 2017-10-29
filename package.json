@@ -32,10 +32,8 @@
     "prod-mobile-ios": "npm run prod && npm run package-mobile-ios",
     "prod-mobile-android": "npm run prod && npm run package-mobile-android",
     "prod-mobile-windows": "npm run prod && npm run package-mobile-windows",
-    "bundle-report": "webpack-bundle-analyzer dist/web/stats.json",
-    "predocker-build": "npm run build",
-    "docker-build": "docker build -t confmr.azurecr.io/herbstcampus-2017:latest .",
-    "docker-push": "docker push confmr.azurecr.io/herbstcampus-2017"
+    "run-mobile-android": "cd dist/mobile && cordova run android --device",
+    "bundle-report": "webpack-bundle-analyzer dist/web/stats.json"
   },
   "private": true,
   "dependencies": {
